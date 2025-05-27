@@ -1,8 +1,13 @@
 Flask==2.3.2
 pandas==2.2.1
-numpy==1.26.4
 scikit-learn==1.4.2
+xgboost==2.0.3
 tensorflow-cpu==2.15.0
+keras==2.15.0
+ml-dtypes==0.2.0
+tensorboard==2.15.1
 joblib==1.4.2
 protobuf>=3.20.3,<5.0.0
-ml-dtypes==0.2.0
+matplotlib
+seaborn
+optuna
