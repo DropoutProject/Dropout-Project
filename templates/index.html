@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dropout Predictor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Modern Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <i class="fas fa-graduation-cap"></i>
+                <span>DROPOUT ANALYTICS</span>
+            </div>
+    
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="predict" class="nav-link">
+                        <i class="fas fa-calculator"></i>
+                        <span>Predictor</span>
+                    </a>
+                </li>
+            </ul>
+    
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="glass-card hero-content">
+            <h1 class="title-gradient">Predict & Prevent<br>Student Dropouts</h1>
+            <p>Empower your institution with AI-powered insights to identify students at risk of dropping out — before
+                it's too late.</p>
+            <a href="predict" class="gradient-btn">Try the Predictor <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <h2 class="features-heading">Why Use Our Predictor?</h2>
+        <div class="feature-items">
+            <div class="feature-box">
+                <i class="fas fa-chart-line"></i>
+                <h3>Comprehensive Analysis</h3>
+                <p>Track GPA, attendance, and multiple risk factors in one place</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Early Warning</h3>
+                <p>Detect high-risk students with 92% accuracy</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>Educator-Friendly</h3>
+                <p>Simple interface designed for busy teachers</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-robot"></i>
+                <h3>AI-Powered</h3>
+                <p>Machine learning models trained on thousands of cases</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this JavaScript at the end of body -->
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Update active link based on current page
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
